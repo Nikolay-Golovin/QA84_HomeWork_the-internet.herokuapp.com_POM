@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BasePage {
     protected WebDriver driver;
@@ -25,7 +27,16 @@ public abstract class BasePage {
     public void click(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
-
+    public boolean shouldHaveText(WebElement element , String text,int time){
+        return getWait(time).until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+    public WebDriverWait getWait(int time) {
+        return new WebDriverWait(driver, Duration.ofSeconds(time));
+    }
+    public void switchToTabByIndex(int index) {
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(index));
+    }
     public void type(WebElement element, String text) {
         if (text != null) {
             click(element);
