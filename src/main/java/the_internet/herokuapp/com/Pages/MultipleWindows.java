@@ -17,7 +17,6 @@ public class MultipleWindows extends BasePage {
 
     @FindBy(css = "a[href='/windows/new']")
     WebElement newWindowLink;
-
       public MultipleWindows openNewWindow() {
         click(newWindowLink);
         return this;

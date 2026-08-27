@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import the_internet.herokuapp.com.core.BasePage;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-import java.util.List;
 
 public class NestedFrames extends BasePage {
 
@@ -37,10 +35,9 @@ private WebElement body;
         driver.switchTo().frame(frameBottom);
         Assertions.assertTrue(isContainsText("BOTTOM", body));
          return this;
-
     }
     public NestedFrames verifiLeftFtame(String text) {
-        driver.switchTo().defaultContent();// Вернуться на главную страницу
+        driver.switchTo().defaultContent();
         driver.switchTo().frame(frameTop);
         driver.switchTo().frame(frameLeft);
         Assertions.assertTrue(isContainsText("LEFT", body));
