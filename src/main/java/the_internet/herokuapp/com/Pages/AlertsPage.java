@@ -13,13 +13,10 @@ public class AlertsPage extends BasePage {
     }
     @FindBy(css = "button[onclick='jsAlert()']")
     WebElement AlertButton;
-
     @FindBy(css = "button[onclick='jsConfirm()']")
     WebElement jsConfirmButton;
-
     @FindBy(css = "button[onclick='jsPrompt()']")
     WebElement jsPromptButton;
-
     @FindBy(id = "result")
     WebElement textResult;
 

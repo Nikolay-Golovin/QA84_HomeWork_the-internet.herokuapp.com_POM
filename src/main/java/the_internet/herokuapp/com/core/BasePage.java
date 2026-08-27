@@ -27,8 +27,11 @@ public abstract class BasePage {
     public void click(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
+
     public boolean shouldHaveText(WebElement element , String text,int time){
+
         return getWait(time).until(ExpectedConditions.textToBePresentInElement(element, text));
+
     }
     public WebDriverWait getWait(int time) {
         return new WebDriverWait(driver, Duration.ofSeconds(time));

@@ -19,7 +19,6 @@ public class MultipleWindowsTest extends TestBase {
         homePage = new HomePage(driver);
     }
 
-
     @Test
     public void newTabTest() {
         homePage.clickMultipleWindows();

@@ -13,7 +13,6 @@ public class HomePage extends BasePage {
     @FindBy(css = "a[href='/javascript_alerts']")
     WebElement AlertsLink;
 
-
     public AlertsPage clickAlerts() {
         click(AlertsLink);
         return new AlertsPage(driver);
@@ -27,4 +26,11 @@ public class HomePage extends BasePage {
         return new MultipleWindows(driver);
     }
 
+ @FindBy(css= "a[href='/nested_frames']")
+ WebElement nestedFramesLink;
+
+    public NestedFrames openNestedFramePage() {
+        click(nestedFramesLink);
+        return new NestedFrames(driver);
+    }
 }

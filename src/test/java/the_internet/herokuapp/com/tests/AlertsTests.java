@@ -8,29 +8,35 @@ import the_internet.herokuapp.com.pages.AlertsPage;
 
 public class AlertsTests extends TestBase {
 
-    private AlertsPage alertsPage;
+   AlertsPage alertsPage;
+   HomePage homePage;
 
     @BeforeEach
     public void setUp() {
-        alertsPage = new HomePage(driver).clickAlerts();
+       alertsPage = new AlertsPage(driver);
+       homePage = new HomePage(driver);
     }
     @Test
     public void jsAlertTest() {
+        homePage.clickAlerts();
         alertsPage.clickJsAlert()
                 .verifyResult("You successfully clicked an alert");
     }
     @Test
     public void jsConfirmOkTest() {
+        homePage.clickAlerts();
         alertsPage.clickJsConfirm("Ok")
                 .verifyResult("You clicked: Ok");
     }
     @Test
     public void jsConfirmCancelTest() {
+        homePage.clickAlerts();
         alertsPage.clickJsConfirm("Cancel")
                 .verifyResult("You clicked: Cancel");
     }
     @Test
     public void jsPromptTest() {
+        homePage.clickAlerts();
         alertsPage.clickJsPrompt("QA84 AutoTest")
                 .verifyResult("You entered: QA84 AutoTest");
     }
