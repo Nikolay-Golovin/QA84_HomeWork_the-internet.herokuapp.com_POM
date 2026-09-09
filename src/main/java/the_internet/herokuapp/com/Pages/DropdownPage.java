@@ -20,12 +20,6 @@ public class DropdownPage extends BasePage {
         new Select(dropdownSelect).selectByVisibleText(optionText);
         return this;
     }
-
-    public DropdownPage selectOptionByValue(String value) {
-        new Select(dropdownSelect).selectByValue(value);
-        return this;
-    }
-
     public DropdownPage verifySelectedOption(String expectedOption) {
         String selected = new Select(dropdownSelect).getFirstSelectedOption().getText();
         Assertions.assertEquals(expectedOption, selected);
