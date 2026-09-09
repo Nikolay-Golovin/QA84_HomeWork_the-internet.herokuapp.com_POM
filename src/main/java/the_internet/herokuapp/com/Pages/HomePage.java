@@ -33,4 +33,14 @@ public class HomePage extends BasePage {
         click(nestedFramesLink);
         return new NestedFrames(driver);
     }
-}
+
+    @FindBy(css = "a[href='/dropdown']")
+    WebElement dropdownLink;
+
+    public DropdownPage clickDropdown() {
+        click(dropdownLink);
+        return new DropdownPage(driver);
+    }
+
+    }
+
